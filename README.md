@@ -1,62 +1,60 @@
-# <h1>RECODE-2.0-linux- </h1>
+# RECODE‑2.0-linux-
 
-_Frozen implementation (jsPsych 7.2, JATOS 3.x) deployed during the 2024–2025 pilot trial at the University of Padua, Italy_
+*Frozen implementation (jsPsych 7.2, JATOS 3.x) deployed during the 2024–2025 pilot trial at the University of Padua, Italy*
 
-> ⚠️ **Preliminary Research Build**  
+> ⚠️ **Preliminary Research Build**
 > This repository reflects the precise codebase used for participant sessions within the RECODE pilot study (January–June 2025). Although functionally stable for research use, this version remains a **development build** and may contain minor bugs, styling inconsistencies, or incomplete modules. It is intended for replication, peer review, or archival usage. Production or clinical deployment should await **version 2.1**, which will include QA-tested UI enhancements and full stability.
 
 ---
 
 ## Table of Contents
 
-1. [Background and Motivation](#background-and-motivation)  
-2. [Project Goals](#project-goals)  
-3. [System Requirements](#system-requirements)  
-4. [Installation](#installation)  
-5. [Architecture Overview](#architecture-overview)  
-6. [Exercise Taxonomy and Logic](#exercise-taxonomy-and-logic)  
-7. [Session Flow and Adaptive Progression](#session-flow-and-adaptive-progression)  
-8. [Avatar and Feedback System](#avatar-and-feedback-system)  
-9. [Data Handling and Privacy](#data-handling-and-privacy)  
-10. [Known Bugs and Limitations](#known-bugs-and-limitations)  
-11. [Citation and Acknowledgments](#citation-and-acknowledgments)  
-12. [Contact](#contact)  
+1. [Background and Motivation](#1-background-and-motivation)
+2. [Project Goals](#2-project-goals)
+3. [System Requirements](#3-system-requirements)
+4. [Installation](#4-installation)
+5. [Architecture Overview](#5-architecture-overview)
+6. [Exercise Taxonomy and Logic](#6-exercise-taxonomy-and-logic)
+7. [Session Flow and Adaptive Progression](#7-session-flow-and-adaptive-progression)
+8. [Avatar and Feedback System](#8-avatar-and-feedback-system)
+9. [Data Handling and Privacy](#9-data-handling-and-privacy)
+10. [Known Bugs and Limitations](#10-known-bugs-and-limitations)
+11. [Citation and Acknowledgments](#11-citation-and-acknowledgments)
+12. [Contact, Author Contributions, and Funding](#12-contact-author-contributions-and-funding)
 
 ---
 
 ## 1. Background and Motivation
 
-The RECODE platform addresses the escalating global burden of neurocognitive disorders—such as Alzheimer's—and provides a **scalable, remote Computerized Cognitive Training (CCT)** model. Research demonstrates moderate improvements in global cognition, memory, attention, and executive functioning among older adults with Mild Cognitive Impairment or early dementia using remote CCT tools built with frameworks like **jsPsych** ([de Leeuw, 2015](https://www.jspsych.org)) and **JATOS** ([Lange et al., 2015](https://www.jatos.org/jsPsych-and-JATOS.html)). Commercial solutions, however, are often proprietary, expensive, and rarely localized for non-English users.
+The RECODE platform addresses the escalating global burden of neurocognitive disorders—such as Alzheimer's—and provides a **scalable, remote Computerized Cognitive Training (CCT)** model. Research demonstrates moderate improvements in global cognition, memory, attention, and executive functioning among older adults with Mild Cognitive Impairment or early dementia using remote CCT tools built with frameworks like [jsPsych](https://www.jspsych.org) ([de Leeuw, 2015](https://doi.org/10.3758/s13428-020-01586-y)) and [JATOS](https://www.jatos.org) ([Lange, 2015](https://doi.org/10.1371/journal.pone.0130834)).
 
-RECODE‑2.0‑GC adapts the clinician-validated volume _“Demenza: 100 esercizi di stimolazione cognitiva”_ (Mapelli et al., 2007) into an open-source, adaptive, Italian-language web platform. It supports home-based or hybrid delivery using only mouse and keyboard, securely hosted through **JATOS**, ensuring full control over data privacy and compliance.
-
-This frozen version was used in a preregistered pilot (Ethics Protocol #4246, University of Padua, Feb–Jun 2025), with sessions conducted under informed consent and without inclusion of personally identifiable data.
+RECODE‑2.0‑GC adapts the clinician-validated volume *“Demenza: 100 esercizi di stimolazione cognitiva”* ([Mapelli et al., 2007](https://www.amazon.it/Demenza-stimolazione-cognitiva-elettroniche-disponibili/dp/886030153X)) into an open-source, adaptive, Italian-language web platform. This platform was used in a preregistered pilot (Ethics Protocol #4246, University of Padua, Feb–Jun 2025), with sessions conducted under informed consent and without collection of personally identifiable data.
 
 ---
 
 ## 2. Project Goals
 
-- **Open-source digitization**: Convert clinically validated paper exercises into an interactive, browser-based environment.
-- **Accessibility-first design**: Large fonts, clear layout, and high contrast to ensure usability for older users.
-- **Adaptive difficulty control**: Implement staircase logic—raising difficulty after 3 blocks ≥ 80% accuracy, lowering after 2 blocks ≤ 50%.
-- **Remote-compatible delivery**: Deployable in at-home, clinic, or telehealth settings requiring only modern browsers.
-- **Secure and transparent data capture**: Trial-level metadata logged securely in JATOS.
-- **Research reproducibility**: Full documentation with MIT licensing to support scholarly replication.
+* **Open-source digitization**: Convert clinically validated paper exercises into an interactive, browser-based environment.
+* **Accessibility-first design**: Large fonts, clear layout, and high contrast to ensure usability for older users.
+* **Adaptive difficulty control**: Implement staircase logic—raising difficulty after 3 blocks ≥ 80% accuracy, lowering after 2 blocks ≤ 50%.
+* **Remote-compatible delivery**: Deployable in at-home, clinic, or telehealth settings requiring only modern browsers.
+* **Secure and transparent data capture**: Trial-level metadata logged securely in JATOS.
+* **Research reproducibility**: Full documentation with MIT licensing to support scholarly replication.
 
 ---
 
 ## 3. System Requirements
 
-| Component        | Minimum                   | Recommended            | Notes                              |
-|------------------|----------------------------|------------------------|-------------------------------------|
-| CPU & RAM        | Dual-core, 4 GB RAM       | Quad-core, 8 GB RAM    | Browser-side execution              |
-| OS               | Windows 10+, macOS 10.14+, Linux | —                | Supports modern browsers            |
-| Browser          | Chrome 109+, Firefox 108+, Edge 109+ | Latest stable versions | JS, cookies, and audio enabled   |
-| Screen           | 1366×768 px               | 1920×1080 px           | Font resizing configurable via JSON |
-| Input            | Mouse + keyboard          | —                      | Touch experimental only             |
-| Server           | JATOS 3.5+, ≥ 2 GB RAM    | JATOS 3.7+ (Linux VM)  | HTTPS strongly recommended          |
+| Component | Minimum                              | Recommended            | Notes                               |
+| --------- | ------------------------------------ | ---------------------- | ----------------------------------- |
+| CPU & RAM | Dual-core, 4 GB RAM                  | Quad-core, 8 GB RAM    | Browser-side execution              |
+| OS        | Windows 10+, macOS 10.14+, Linux     | —                      | Supports modern browsers            |
+| Browser   | Chrome 109+, Firefox 108+, Edge 109+ | Latest stable versions | JS, cookies, and audio enabled      |
+| Screen    | 1366×768 px                          | 1920×1080 px           | Font resizing configurable via JSON |
+| Input     | Mouse + keyboard                     | —                      | Touch experimental only             |
+| Server    | JATOS 3.5+, ≥ 2 GB RAM               | JATOS 3.7+ (Linux VM)  | HTTPS strongly recommended          |
 
-**Accessibility**: WCAG 2.1 AA compliant color contrast; adjustable font size and audio settings via `config/uiSettings.json`.
+**Accessibility:** WCAG 2.1 AA compliant color contrast; adjustable font size and audio settings via `config/uiSettings.json`.
 
 ---
 
@@ -69,242 +67,142 @@ git clone https://github.com/giuconte/RECODE-2.0-GC.git
 cd RECODE-2.0-GC
 ```
 
+### 4.2 Deploy via JATOS
+
+1. Access your JATOS instance (`https://<server>:<port>`).
+2. Go to **Studies → Import Study** and upload `recode2.0_frozen.jzip`.
+3. Configure single-use participant links.
+4. Set run limits in `global.conf` (e.g., `maxRunsPerParticipant = 1`).
+5. Instruct participants to complete the session in a single sitting (30–45 minutes).
+
+### 4.3 Local Testing (Optional)
+
+```bash
+npm install -g http-server
+http-server ./app -p 8080
+```
+
+* Access via `http://localhost:8080`; data saved in `app/data/local_debug.csv`.
+
+---
+
 ## 5. Architecture Overview
 
-RECODE‑2.0‑GC is constructed on a **three‑tier architecture** to support remote delivery, interactive training, and adaptive progression.
+**Frontend:**
 
-### 🖥️ 1. Frontend (Client‑Side)
+* jsPsych 7.2 (modular plugins in `app/js/plugins/`)
+* Timeline and adaptive logic (`app/js/timeline.js`, `app/js/adaptive.js`)
+* Responsive SASS/CSS
 
-- Implemented using **jsPsych 7.2**, a modular JS framework for behavioral research, enabling responsive and timed stimulus presentation with precision control :contentReference[oaicite:1]{index=1}.  
-- Structure:
-  - `app/js/plugins/` contains custom plugins for each exercise category.
-  - Core logic `app/js/timeline.js` loads stimuli and builds the session timeline.
-  - Adaptive logic implemented in `app/js/adaptive.js`, leveraging jsPsych’s `data.addProperties()` for embedding metadata.
-  - User interface styled with SASS & CSS (`app/css`), adhering to responsive layouts and WCAG 2.1-AA contrast guidelines.
+**Backend:**
 
-- Data collection is handled through jsPsych's data module, with trial-level parameters such as `stimulus`, `correct_response`, and `trial_duration` captured precisely :contentReference[oaicite:2]{index=2}.
+* JATOS 3.x for data storage/session management
+* Study segmented: `comp-intro`, `comp-training`, `comp-end`
+* Data transmitted via `jatos.submitResultData()`, stored in JSON
 
-### 🛠️ 2. Backend (Deployment & Data Logging)
+**Configuration:**
 
-- The platform is deployed using **JATOS (Just Another Tool for Online Studies)** version 3.x for session management and secure data storage :contentReference[oaicite:3]{index=3}.
-  - Study comprises sequential components: `comp-intro`, `comp-training`, `comp-end`.
-  - Each participant’s session is associated with a unique result key via `window.jatos.studyResultPortKey`.
-  - At block completion, data is transmitted using `jatos.submitResultData(jsPsych.data.get().json(), jatos.startNextComponent)` to ensure atomic save-and-advance behavior :contentReference[oaicite:4]{index=4}.
-  - Server-side, JATOS stores JSON-formatted session logs, accessible via the UI/API and downloadable by researchers :contentReference[oaicite:5]{index=5}.
-
-### ⚙️ 3. Configuration & Adaptive Progression Engine
-
-- All stimuli, difficulty settings, session parameters, and UI elements are abstracted into JSON files: `config/exercises.json`, `config/levels.json`, and `config/uiSettings.json`.
-- The adaptive model follows a stair-case algorithm:
-  - Accuracy ≥ 80% over three consecutive blocks triggers a level increase.
-  - Accuracy ≤ 50% over two blocks yields a downward adjustment.
-- Adaptive logic executes immediately after each block, updating session state and storing progression history via `jsPsych.data`.
+* JSON files: `config/exercises.json`, `config/levels.json`, `config/uiSettings.json`
+* Adaptive progression engine (staircase: up ≥80%, down ≤50%)
 
 ---
 
 ## 6. Exercise Taxonomy and Logic
 
-Exercises derive from the categories defined in Mapelli et al. (2007):
+* **Orientation:** Time/place context
+* **Memory:** Immediate/delayed verbal recall
+* **Attention:** Visual search, Stroop-like tasks
+* **Language:** Naming, matching, fluency
+* **Executive Function:** Sequencing, arithmetic
 
-1. **Orientation** – Time/place context (e.g., "Which season is it?")  
-2. **Memory** – Verbal immediate/delayed recall (5–10 words)  
-3. **Attention** – Visual search, Stroop-like color-word tasks  
-4. **Language** – Picture naming, word–image matching, fluency prompts  
-5. **Executive Function** – Digit sequencing, arithmetic operations
-
-Each exercise is implemented through jsPsych plugins:
-
-- Trials are created as objects with parameters like `type`, `stimulus`, and `choices`.
-- A block of 10 trials is assembled and appended to the timeline.
-- Each trial records response accuracy and reaction time.
-- Upon completing a block, aggregate statistics are computed and logged to data and JATOS server.
-
-Plugins are standard jsPsych types (e.g., `html-button-response`, `image-keyboard-response`) with minimal customization to align with stimuli types and desired trial dynamics :contentReference[oaicite:6]{index=6}.
+Each implemented via jsPsych plugin, with block-based accuracy and RT logging.
 
 ---
 
 ## 7. Session Flow and Adaptive Progression
 
-The session timeline is carefully structured to optimize engagement and measurement fidelity:
-
-1. **Introduction** – Welcome screen; demographic survey via `survey-html-form`.
-2. **Avatar & Settings** – Participants choose a cartoon avatar and may adjust font size or color contrast.
-3. **Practice Phase** – 1–2 trial practice blocks per category; familiarisation only.
-4. **Training Phase**:
-   - Each of the five categories includes 3–5 blocks of 10 trials.
-   - Block order follows a fixed round-robin sequence.
-   - After each block, the adaptive engine evaluates performance:
-     - ≥80% accuracy x3 → up difficulty level.
-     - ≤50% accuracy x2 → decrease difficulty.
-5. **Mid-Session Break** – Rest screen with optional performance summary at ~50%.
-6. **Final Phase & Questionnaire** – Completion with subjective measures (e.g., fatigue, satisfaction).
-7. **Conclusion** – Feedback display, session summary, exit code, therapist notification.
-
-Detailed session metadata (trial outcomes, adherence, progression) is stored and transmitted block by block for security and reliability.
+1. **Introduction:** Welcome, demographics
+2. **Avatar & Settings:** Avatar choice, font/contrast adjustments
+3. **Practice Phase:** 1–2 sample trials per category
+4. **Training Phase:** 3–5 blocks per category, adaptive progression
+5. **Mid-Session Break:** Rest, optional feedback
+6. **Questionnaire:** Subjective measures
+7. **Conclusion:** Feedback, code, therapist notification
 
 ---
 
 ## 8. Avatar and Feedback System
 
-Participant engagement is enhanced through four selectable avatars:
-
-- Selections: youth/female, youth/male, senior/female, senior/male.
-- The `avatarManager.js` module controls visual presentations, speech, and feedback logic.
-- Avatar includes:
-  - `on_start` animation.
-  - Mid-block interjections (e.g., encouragement if accuracy falls <60%).
-  - Celebratory feedback (confetti, applause audio) for ≥90% accuracy.
-  - Audio cues generated via TTS or recorded speech files.
-- Avatar behavior is synchronized with trial events via jsPsych’s `on_load` callbacks and event-based triggering.
+* 4 avatars (youth/senior x male/female)
+* Visual, auditory, and celebratory feedback
+* TTS/recorded audio cues
+* Synchronized via jsPsych `on_load` and events
 
 ---
 
 ## 9. Data Handling and Privacy
 
-Protecting participant data is paramount. RECODE‑2.0‑GC adheres to **Privacy by Design**, collecting only essential data, ensuring client‑side pseudonymisation, and encrypting transit and storage channels :contentReference[oaicite:1]{index=1}.
-
-### Data Collected
-
-- Responses, reaction times, block-level accuracy  
-- Meta properties via `jsPsych.data.addProperties()` (e.g., subject code, timestamp, session ID) :contentReference[oaicite:2]{index=2}  
-- No personally identifying information is gathered (e.g., name, IP, email).  
-- Stimuli and level progression logs captured conditionally to enable longitudinal adaptation.
-
-### Data Flow
-
-1. Captured by jsPsych (browser memory) ➝ annotated with metadata ➝ exported as CSV/JSON payload.
-2. Automatically submitted via `jatos.submitResultData()` to JATOS back-end. JATOS stores research data, including run times and worker identifiers, and supports data deletion on participant abort :contentReference[oaicite:3]{index=3}.
-3. Researchers download raw JSON/CSV via JATOS GUI or API for backup and analysis :contentReference[oaicite:4]{index=4}.
-
-### Privacy & Security Best Practices
-
-- **HTTPS/TLS encryption** enforced for all client-server communication.  
-- **Minimal data collection**, storing only necessary behavioural traces :contentReference[oaicite:5]{index=5}.  
-- **Server-side access control** ensures that only authorized personnel can export or delete data.  
-- **Data retention schedules** recommended (default 5 years, but configurable via JATOS settings).  
-- **Regular audit logs** should be enabled to track all access events.
-
-### Ethical Compliance
-
-The trial was approved by the University of Padua Ethics Committee (Protocol #4246, Dec 2023). Participants provided informed consent and were instructed they could cease the session at any point, triggering data deletion via `jatos.abortStudy()` :contentReference[oaicite:6]{index=6}. Compliance with GDPR and Italian privacy law (D.Lgs 196/2003, amended via GDPR) has been ensured, with strong emphasis on pseudonymisation, limited retention, and role-based access.
+* No personal data collected
+* All session data pseudonymised, transferred securely via HTTPS/TLS
+* Data retention, deletion, and access handled by JATOS policies
+* Approved by Ethics Committee (Protocol #4246, Dec 2023)
+* GDPR and Italian privacy law compliant
 
 ---
 
 ## 10. Known Bugs and Limitations
 
-This is a proof-of-concept release and still under development. Below is a non-exhaustive list of open issues tracked via GitHub Issues:
+* Audio feedback overlap possible
+* Touch input inconsistent
+* Edge-case progression logic
+* Minor browser CSS issues
+* No internationalisation (Italian only)
+* Limited screen reader support
+* Autosave is per-block
+* Stimulus reuse in some categories
 
-1. **Audio feedback overlaps** if participant clicks rapidly in avatar speech.  
-2. **Touch support inconsistent**: most tasks rely on mouse/keyboard; touch input works on tablets but lacks calibration.  
-3. **Edge-case race condition** in adaptive progression—rare misclassification of two-level jumps.  
-4. **Browser compatibility**: works reliably on Chrome and Firefox; minor CSS displacements observed in Edge.  
-5. **Lack of internationalisation** — the entire UI and stimuli are Italian only; no language-toggle available.  
-6. **Accessibility**: although color contrast meets WCAG AA, screen-reader support is minimal.  
-7. **Offline state**: partial session progress may not persist if connection drops; autosave is per-block only.  
-8. **Stimulus uniformity**: some pictures duplicated across categories because of asset reuse.
-
-For a full issue list, see the [Issues tab on GitHub](https://github.com/giuconte/RECODE‑2.0‑GC/issues). Future maintenance release 2.1 will address the majority of these.
+See [GitHub Issues](https://github.com/giuconte/RECODE-2.0-GC/issues) for details.
 
 ---
 
 ## 11. Citation and Acknowledgments
 
-If you use RECODE‑2.0 in academic or clinical work, please cite the following manuscript:
+If you use RECODE‑2.0‑GC, please cite:
 
 > Ravelli, A.*, Livoti, V.*, Contemori, G., Macchia, E., Romeo, Z., Noale, M., Lucchi, E., Ghilardotti, G., Morandi, A., De Rui, M., Sergi, G., Maggi, S., Mapelli, D., Bonato, M., & Devita, M. (2025).
-> RECODE Pilot Study: Preliminary Testing of a New Open, Computer-Based Platform for Cognitive Stimulation in Italian. Behavior Research Methods. Submitted.
-> [Preprint or DOI, if available]
+> RECODE Pilot Study: Preliminary Testing of a New Open, Computer-Based Platform for Cognitive Stimulation in Italian. *Behavior Research Methods*. Submitted.
 
-Also consider citing:
+Also cite:
 
-- Mapelli, D., Parisi, P., Mondini, S., Iannizzi, P., & Bergamaschi, S. (2007). Demenza: 100 esercizi di stimolazione cognitiva [with CD-ROM]. Varese, Italy: Raffaello Cortina Editore. ISBN 978-88-6030-153-6.  
-- de Leeuw, J. R. (2021). jsPsych: A JavaScript library for creating rich behavioral experiments in a web browser. Behavior Research Methods, 53, 869–877. https://doi.org/10.3758/s13428-020-01586-y.  
-- Lange, K. (2015). Just Another Tool for Online Studies (JATOS): An easy solution for setup and management of web servers supporting online studies. PLOS ONE, 10(6), e0130834. https://doi.org/10.1371/journal.pone.0130834.
+* Mapelli, D., Parisi, P., Mondini, S., Iannizzi, P., & Bergamaschi, S. (2007). *Demenza: 100 esercizi di stimolazione cognitiva* \[with CD-ROM]. Varese: Raffaello Cortina Editore. ISBN 978-88-6030-153-6.
+* de Leeuw, J. R. (2021). jsPsych: A JavaScript library for creating rich behavioral experiments in a web browser. *Behavior Research Methods, 53*, 869–877. [https://doi.org/10.3758/s13428-020-01586-y](https://doi.org/10.3758/s13428-020-01586-y)
+* Lange, K. (2015). Just Another Tool for Online Studies (JATOS): An easy solution for setup and management of web servers supporting online studies. *PLOS ONE, 10*(6), e0130834. [https://doi.org/10.1371/journal.pone.0130834](https://doi.org/10.1371/journal.pone.0130834)
 
-Acknowledgments
-We thank all participants and their caregivers, the clinical and administrative team at CDCD Padua, and our development team. This work was supported by the University of Padua Life Sciences Fund (Grant #LS‑2019‑02), with additional contributions from the Department of General Psychology, the Geriatrics Unit (DIMED), CNR, Cremona Solidale, and the University of Brescia.
+**Acknowledgments**
+We thank all participants and caregivers, the clinical/administrative team at CDCD Padua, and our development team.
+Supported by the University of Padua Life Sciences Fund (Grant #LS-2019-02), Department of General Psychology, Geriatrics Unit (DIMED), CNR, Cremona Solidale, University of Brescia.
+
 ---
 
 ## 12. Contact, Author Contributions, and Funding
-Authors and Institutional Affiliations:
 
-Adele Ravelli*
-Geriatrics Unit, Department of Medicine (DIMED), University of Padua, Padua, Italy
-Email: adele.ravelli@studenti.unipd.it | ORCID: 0000-0002-6345-6836
+**Authors and Institutional Affiliations:**
 
-Vincenzo Livoti*
-Padua Neuroscience Center (PNC), University of Padua; Department of General Psychology, University of Padua, Padua, Italy
-Email: vincenzo.livoti@phd.unipd.it | ORCID: 0009-0003-6261-5422
+* **Adele Ravelli\***, Geriatrics Unit, DIMED, University of Padua, Italy – [adele.ravelli@studenti.unipd.it](mailto:adele.ravelli@studenti.unipd.it), ORCID: 0000-0002-6345-6836
+* **Vincenzo Livoti\***, PNC/Department of General Psychology, University of Padua, Italy – [vincenzo.livoti@phd.unipd.it](mailto:vincenzo.livoti@phd.unipd.it), ORCID: 0009-0003-6261-5422
+* **Giulio Contemori** (corresponding), Department of General Psychology, University of Padua – [giulio.contemori@unipd.it](mailto:giulio.contemori@unipd.it), ORCID: 0000-0002-1873-1472
+* (…other authors as in previous drafts…)
 
-Giulio Contemori
-Department of General Psychology, University of Padua, Padua, Italy
-Email: giulio.contemori@unipd.it | ORCID: 0000-0002-1873-1472
-Corresponding author
+\*These authors contributed equally.
 
-Eleonora Macchia
-Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
-Email: eleonoramacchia@cnr.it
+**Funding**
+University of Padua Life Sciences grant (#LS‑2019‑02), with support from Department of General Psychology, Geriatrics Unit (DIMED), CNR, Cremona Solidale, and University of Brescia.
 
-Zaira Romeo
-Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
-Email: zaira.romeo@in.cnr.it | ORCID: 0000-0002-0144-5840
+**Ethics**
+Approved by the University of Padua Ethics Committee (Protocol 4246). Conducted per the Declaration of Helsinki.
 
-Marianna Noale
-Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
-Email: marianna.noale@in.cnr.it | ORCID: 0000-0001-7115-139X
+**License**
+MIT License (see `LICENSE.md`).
 
-Elena Lucchi
-Azienda Speciale Cremona Solidale, Cremona, Italy
-Email: el.lucchi@gmail.com | ORCID: 0009-0005-1575-2488
+For technical questions, open a [GitHub issue](https://github.com/giuconte/RECODE-2.0-GC/issues) or email the corresponding author.
 
-Giorgia Ghilardotti
-Azienda Speciale Cremona Solidale, Cremona, Italy
-Email: ghilagiorgia@gmail.com
-
-Alessandro Morandi
-Department of Clinical and Experimental Sciences, University of Brescia, Brescia, Italy; Azienda Speciale Cremona Solidale, Cremona, Italy
-Email: alessandro.morandi@unibs.it | ORCID: 0000-0003-4848-2507
-
-Marina De Rui
-Geriatrics Unit, Department of Medicine, University of Padua, Padua, Italy
-Email: marina.derui@aopd.veneto.it | ORCID: 0000-0003-4966-1312
-
-Giuseppe Sergi
-Geriatrics Unit, Department of Medicine, University of Padua, Padua, Italy
-Email: giuseppe.sergi@unipd.it | ORCID: 0000-0001-9757-856X
-
-Stefania Maggi
-Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
-Email: stefania.maggi@in.cnr.it | ORCID: 0000-0002-0453-8663
-
-Daniela Mapelli
-Department of General Psychology, University of Padua, Padua, Italy
-Email: daniela.mapelli@unipd.it | ORCID: 0000-0003-2168-1426
-
-Mario Bonato
-Department of General Psychology and Padua Neuroscience Center (PNC), University of Padua, Padua, Italy
-Email: mario.bonato@unipd.it | ORCID: 0000-0002-2004-9341
-
-Maria Devita
-Department of General Psychology and Geriatrics Unit, Department of Medicine, University of Padua, Padua, Italy
-Email: maria.devita@unipd.it | ORCID: 0000-0001-5899-8000
-
-*These authors contributed equally to the work.
-
-Correspondence:
-Dr. Giulio Contemori
-Department of General Psychology, University of Padua
-Via Venezia 8, 35131 Padua, Italy
-Email: giulio.contemori@unipd.it
-
-Funding:
-This project was supported by the University of Padua, Life Sciences grant (Grant #LS‑2019‑02).
-Institutional support was provided by the Department of General Psychology and the Geriatrics Unit (DIMED), University of Padua. Additional collaboration and infrastructure support were provided by the National Research Council (CNR), Cremona Solidale, and the University of Brescia.
-
-Ethics Approval:
-This research was approved by the Ethics Committee for Psychological Research at the University of Padua (Protocol no. 4246) and conducted in accordance with the Declaration of Helsinki and institutional guidelines.
-
-License:
-This repository is released under the MIT License (see `LICENSE.md`).
-
-For technical issues, feature requests, or collaboration inquiries, please use the GitHub issue tracker or contact the corresponding author.
