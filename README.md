@@ -210,9 +210,11 @@ For a full issue list, see the [Issues tab on GitHub](https://github.com/giucont
 
 ## 11. Citation and Acknowledgments
 
-If you use RECODE‑2.0‑GC in academic or clinical work, please cite:
+If you use RECODE‑2.0 in academic or clinical work, please cite the following manuscript:
 
-> Giucastro, Conte, Mapelli, et al. (2025). *RECODE‑2.0‑GC: A frozen web platform for remote computerized cognitive training based on Mapelli’s "100 Dementia Exercises"*. _Behavior Research Methods_. Submitted.
+> Ravelli, A.*, Livoti, V.*, Contemori, G., Macchia, E., Romeo, Z., Noale, M., Lucchi, E., Ghilardotti, G., Morandi, A., De Rui, M., Sergi, G., Maggi, S., Mapelli, D., Bonato, M., & Devita, M. (2025).
+> RECODE Pilot Study: Preliminary Testing of a New Open, Computer-Based Platform for Cognitive Stimulation in Italian. Behavior Research Methods. Submitted.
+> [Preprint or DOI, if available]
 
 Also consider citing:
 
