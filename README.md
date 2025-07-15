@@ -224,10 +224,86 @@ We extend our heartfelt thanks to the participants, research staff at the CDCD P
 
 ---
 
-## 12. Contact
+## 12. Contact, Author Contributions, and Funding
+Authors and Institutional Affiliations:
 
-Project maintainer: **Dr. Giulia Conte** (giulia.conte@unipd.it)  
-Lead developer: **Mr. Marco Rossi** (marco.rossi@unipd.it)  
+Adele Ravelli*
+Geriatrics Unit, Department of Medicine (DIMED), University of Padua, Padua, Italy
+Email: adele.ravelli@studenti.unipd.it | ORCID: 0000-0002-6345-6836
 
-For technical issues, feature requests, or collaboration inquiries, please file an issue via GitHub or email the core team directly.  
-This repository is released under the **MIT License** (see `LICENSE.md`).
+Vincenzo Livoti*
+Padua Neuroscience Center (PNC), University of Padua; Department of General Psychology, University of Padua, Padua, Italy
+Email: vincenzo.livoti@phd.unipd.it | ORCID: 0009-0003-6261-5422
+
+Giulio Contemori
+Department of General Psychology, University of Padua, Padua, Italy
+Email: giulio.contemori@unipd.it | ORCID: 0000-0002-1873-1472
+Corresponding author
+
+Eleonora Macchia
+Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
+Email: eleonoramacchia@cnr.it
+
+Zaira Romeo
+Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
+Email: zaira.romeo@in.cnr.it | ORCID: 0000-0002-0144-5840
+
+Marianna Noale
+Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
+Email: marianna.noale@in.cnr.it | ORCID: 0000-0001-7115-139X
+
+Elena Lucchi
+Azienda Speciale Cremona Solidale, Cremona, Italy
+Email: el.lucchi@gmail.com | ORCID: 0009-0005-1575-2488
+
+Giorgia Ghilardotti
+Azienda Speciale Cremona Solidale, Cremona, Italy
+Email: ghilagiorgia@gmail.com
+
+Alessandro Morandi
+Department of Clinical and Experimental Sciences, University of Brescia, Brescia, Italy; Azienda Speciale Cremona Solidale, Cremona, Italy
+Email: alessandro.morandi@unibs.it | ORCID: 0000-0003-4848-2507
+
+Marina De Rui
+Geriatrics Unit, Department of Medicine, University of Padua, Padua, Italy
+Email: marina.derui@aopd.veneto.it | ORCID: 0000-0003-4966-1312
+
+Giuseppe Sergi
+Geriatrics Unit, Department of Medicine, University of Padua, Padua, Italy
+Email: giuseppe.sergi@unipd.it | ORCID: 0000-0001-9757-856X
+
+Stefania Maggi
+Neuroscience Institute, Aging Branch, National Research Council (CNR), Padua, Italy
+Email: stefania.maggi@in.cnr.it | ORCID: 0000-0002-0453-8663
+
+Daniela Mapelli
+Department of General Psychology, University of Padua, Padua, Italy
+Email: daniela.mapelli@unipd.it | ORCID: 0000-0003-2168-1426
+
+Mario Bonato
+Department of General Psychology and Padua Neuroscience Center (PNC), University of Padua, Padua, Italy
+Email: mario.bonato@unipd.it | ORCID: 0000-0002-2004-9341
+
+Maria Devita
+Department of General Psychology and Geriatrics Unit, Department of Medicine, University of Padua, Padua, Italy
+Email: maria.devita@unipd.it | ORCID: 0000-0001-5899-8000
+
+*These authors contributed equally to the work.
+
+Correspondence:
+Dr. Giulio Contemori
+Department of General Psychology, University of Padua
+Via Venezia 8, 35131 Padua, Italy
+Email: giulio.contemori@unipd.it
+
+Funding:
+This project was supported by the University of Padua, Life Sciences grant (Grant #LS‑2019‑02).
+Institutional support was provided by the Department of General Psychology and the Geriatrics Unit (DIMED), University of Padua. Additional collaboration and infrastructure support were provided by the National Research Council (CNR), Cremona Solidale, and the University of Brescia.
+
+Ethics Approval:
+This research was approved by the Ethics Committee for Psychological Research at the University of Padua (Protocol no. 4246) and conducted in accordance with the Declaration of Helsinki and institutional guidelines.
+
+License:
+This repository is released under the MIT License (see `LICENSE.md`).
+
+For technical issues, feature requests, or collaboration inquiries, please use the GitHub issue tracker or contact the corresponding author.
