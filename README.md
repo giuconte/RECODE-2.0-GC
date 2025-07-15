@@ -1,7 +1,3 @@
-Certainly. Here is a **fully updated, academic, continuous-prose README.md** for your project, using the structure and improvements discussed above. This version integrates all corrections, minimizes excessive bulleting, uses proper Markdown (so that rendering is uniform on GitHub and PDF), and retains maximal academic and narrative clarity. Pagination is handled via a numbered table of contents and clear section headings, which are automatically recognized by GitHub for navigation.
-
----
-
 # RECODE-2.0-linux-
 
 *Frozen implementation (jsPsych 7.2, JATOS 3.x) deployed during the 2024–2025 pilot trial at the University of Padua, Italy*
@@ -134,8 +130,5 @@ ORCID identifiers and contact details are provided for all senior authors and ar
 
 The development and pilot evaluation of RECODE-2.0-GC were supported by the University of Padua Life Sciences grant (#LS-2019-02), with institutional support from the Department of General Psychology and the Geriatrics Unit (DIMED). The project also benefited from the collaboration and infrastructure provided by the National Research Council (CNR), Cremona Solidale, and the University of Brescia. Ethical approval was granted by the Ethics Committee for Psychological Research at the University of Padua (Protocol no. 4246), and all procedures complied with the Declaration of Helsinki and Italian privacy law.
 
-This repository is distributed under the MIT License (see LICENSE.md). For technical issues, feature requests, or collaborative inquiries, please use the GitHub issue tracker or contact the corresponding author.
-
----
-
-If you would like further narrative expansion or a specific formatting style (e.g., APA, Vancouver, BibTeX), or wish to include visual elements or quickstart code snippets, just specify your needs.
+This repository is distributed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
+For technical issues, feature requests, or collaborative inquiries, please use the GitHub issue tracker or contact the corresponding author.
