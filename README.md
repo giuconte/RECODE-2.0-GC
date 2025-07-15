@@ -1,6 +1,5 @@
 # <h1>RECODE-2.0-linux- </h1>
- 
-# RECODE‑2.0‑GC  
+
 _Frozen implementation (jsPsych 7.2, JATOS 3.x) deployed during the 2024–2025 pilot trial at the University of Padua, Italy_
 
 > ⚠️ **Preliminary Research Build**  
