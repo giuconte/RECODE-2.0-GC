@@ -217,12 +217,12 @@ If you use RECODE‑2.0 in academic or clinical work, please cite the following 
 
 Also consider citing:
 
-- Mapelli, D., Parisi, P., & Tettamanti, M. (2007). _Demenza: 100 esercizi di stimolazione cognitiva_. Varese: Gianfranco Angeli.  
-- de Leeuw, J. R. (2021). jsPsych: A JavaScript library for creating rich behavioral experiments in a web browser. _Behavior Research Methods, 53_, 869–877.  
-- Lange, K. (2015). Just Another Tool for Online Studies (JATOS). _PLoS ONE, 10_(6), e0130834.
+- Mapelli, D., Parisi, P., Mondini, S., Iannizzi, P., & Bergamaschi, S. (2007). Demenza: 100 esercizi di stimolazione cognitiva [with CD-ROM]. Varese, Italy: Raffaello Cortina Editore. ISBN 978-88-6030-153-6.  
+- de Leeuw, J. R. (2021). jsPsych: A JavaScript library for creating rich behavioral experiments in a web browser. Behavior Research Methods, 53, 869–877. https://doi.org/10.3758/s13428-020-01586-y.  
+- Lange, K. (2015). Just Another Tool for Online Studies (JATOS): An easy solution for setup and management of web servers supporting online studies. PLOS ONE, 10(6), e0130834. https://doi.org/10.1371/journal.pone.0130834.
 
-We extend our heartfelt thanks to the participants, research staff at the CDCD Padua, and our developers: [names omitted]. Support provided by the University of Padua Life Sciences fund (Grant #LS‑2019‑02).
-
+Acknowledgments
+We thank all participants and their caregivers, the clinical and administrative team at CDCD Padua, and our development team. This work was supported by the University of Padua Life Sciences Fund (Grant #LS‑2019‑02), with additional contributions from the Department of General Psychology, the Geriatrics Unit (DIMED), CNR, Cremona Solidale, and the University of Brescia.
 ---
 
 ## 12. Contact, Author Contributions, and Funding
